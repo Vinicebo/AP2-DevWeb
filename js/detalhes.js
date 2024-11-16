@@ -71,7 +71,7 @@ const criaDetalhes = (atleta) => {
     info.appendChild(desc);
 
     link.innerHTML = "Voltar"
-    link.href = `index.html`
+    link.href = `principal.html`
     body.appendChild(link)
 
     pagina.appendChild(foto)

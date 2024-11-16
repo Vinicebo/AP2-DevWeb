@@ -21,3 +21,124 @@
 a {
     margin-bottom: 5px;
 }
+
+.login_div{
+    display: flex;
+  flex-direction: column;
+  align-items: center; 
+  height: 100vh; 
+  text-align: center;
+  justify-content: space-evenly;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+}
+}
+
+header{
+    display: flex;
+    background-color: grey;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    
+    
+}
+
+#logout{
+    width: 100px;
+    height: 50px;
+    background-color: black;
+    color: aliceblue;
+    margin-right: 3em;
+    
+    
+    
+}
+
+.filtros {    
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    margin-left: 30em;
+  
+
+}
+.filtros button {    
+    margin  : 5em;
+    
+  
+
+}
+
+
+
+
+.div-atletas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    justify-items: center;
+    align-items: center;
+    max-width: 1400px;
+    margin: auto;
+    margin-bottom: 2em;
+    margin-right: 30em;
+    margin-top: 10em;
+}
+.div-atletas > h1 {
+    font-size: 2em;
+   
+}
+
+
+@media screen and (min-width: 768px) {
+    .div-atletas {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .div-atletas {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+
+@media screen and (min-width: 1300px) {
+    .div-atletas {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+.cartao {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    border: 3px solid black;
+    border-radius: 15px;
+    text-align: center;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+select {
+    font-size: 24px;
+    font-weight: bold;
+    height: 2.7em;
+    width: 10em;
+    text-align: center;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 2em auto;
+    display: block;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+}
+

@@ -3,16 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Atletas Botafogo</title>
+    <link rel="icon" type="image/png" href="escudo.png" sizes="16x16">
     <script type="text/javascript" src="js/script.js" defer></script>
     <script type="text/javascript" src="md5.js" defer></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <button id="logout">Logout</button>
-   
+
+    <header>
+        <h1>Atletas Botafogo 2024.1</h1>
+        <button id="logout">Logout</button>
+    </header>
+    
+
+    <div class="filtros">
+        <button onclick="elencoCompleto()">Elenco Completo</button>
+        <button onclick="masculino()">Elenco Masculino</button>
+        <button onclick="feminino()">Elenco Feminino</button>
+        <input type="text" id="buscaInput" placeholder="Digite o nome do atleta" oninput="buscaNome()">
+    </div>
 
     <div id="container"></div>
+    <div class="div-atletas"></div>
+   
+
+ 
 </body>
 </html>

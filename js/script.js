@@ -1,8 +1,11 @@
+const div_atletas = document.querySelector(".div-atletas")
 const container = document.getElementById("container")
 
-const div_atletas = document.querySelector(".div-atletas")
+
 
 const buscaInput = document.getElementById("buscaInput")
+
+const valor = document.getElementById("selecto")
 
 const pega_json = async (caminho) => {
     const resposta = await fetch(caminho);
@@ -57,7 +60,7 @@ const feminino = () => {
     pega_json("https://botafogo-atletas.mange.li/2024-1/feminino").then((retorno) => { atletas = retorno; exibirAtletas(atletas) })
 }
 
-const select = () => pega_json(`https://botafogo-atletas.mange.li/2024-1/${select.value}`).then((retorno) => { atletas = retorno; exibirAtletas(atletas) })
+const select = () => pega_json(`https://botafogo-atletas.mange.li/2024-1/${valor.value}`).then((retorno) => { atletas = retorno; exibirAtletas(atletas) })
 const buscaNome= () => exibirAtletas(atletas, buscaInput.value)
 
 
@@ -77,23 +80,23 @@ const exibirAtletas = (atletas, entrada = "") => {
     })
 }
 
-const verificaSenha = () => {
-    const entrada = document.getElementById("password").value
-    const senha = "b427d8b97526e30ef1adc00d1b9ae82b16af9716326685beebb6e83e6a0789ea"
-    
-    if (senha === hex_sha256(entrada)) {
-        sessionStorage.setItem("logado", "sim")
-        alert("Senha correta. Logado")
-        window.location.href = "index.html";
+const verificalog = () =>{
+    if (sessionStorage.getItem("logado")) {
 
-    } else {
-        alert("Senha incorreta.")
+        
+    }
+    else {
+        alert("Você não está logado")
+        window.location.href = "index.html"
     }
 }
 
-document.getElementById("logout").onclick = () => {
+const logout = () => {
+    document.getElementById("logout").onclick 
     sessionStorage.removeItem("logado")
-    window.location.href = "login.html";
+    window.location.href = "index.html";
     alert("Saiu!")
+
 }
 
+verificalog()

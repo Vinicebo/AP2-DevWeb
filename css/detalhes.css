@@ -1,3 +1,8 @@
+body {
+    background-color: rgb(54, 54, 54);
+    color: white;
+}
+
 #atleta {
     display: flex;
     flex-direction: column;
@@ -22,6 +27,20 @@
     }
 }
 
-.info > p {
+.info>p {
     font-size: 20px;
+}
+
+a {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    font-size: 50px;
+    color: black;
+    margin-top: 25px;
+    
+
+    &:hover {
+        color: white;
+    }
 }

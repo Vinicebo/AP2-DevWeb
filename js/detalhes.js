@@ -84,12 +84,31 @@ const criaDetalhes = (atleta) => {
 if (sessionStorage.getItem("logado")) {
     pega_json(`https://botafogo-atletas.mange.li/2024-1/${id}`).then(
         (retorno) => {
-            criaDetalhes(retorno)
+            if (typeof(retorno.id) == "undefined") {
+                document.body.innerHTML = "<h1>Falha ao carregar atleta!</h1> <a href='principal.html'>Voltar</a>"
+
+            } else {
+                criaDetalhes(retorno)
+            }
+
         }
     )
 } else {
-    body.innerHTML = "<h1>Você precisa estar logado.</h1>"
+    document.body.innerHTML = "<h1>Você precisa estar logado.</h1> <a href='index.html'>Voltar</a>"
 }
+
+const verificalog = () =>{
+    if (sessionStorage.getItem("logado")) {
+
+        
+    }
+    else {
+        alert("Você não está logado")
+        window.location.href = "index.html"
+    }
+}
+
+verificalog()
 
 // console.log(achaCookie("nome"))
 // console.log(localStorage.getItem("id"))
